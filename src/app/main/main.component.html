@@ -1,0 +1,17 @@
+<div *ngIf="successLogin">
+
+  <h2>SucessLogin</h2>
+
+  <h2>Hi Lovely Sole!</h2>
+  <p>You have done it!</p>
+  <p>Your magic number is {{successRandInt}}</p>
+  
+</div>
+
+<div *ngIf="!successLogin">
+
+  <h2>Hi Lovely Sole!</h2>
+  <p>You had inserted a wrong username and password.</p>
+  <p>Come on , get your fighting spirit back and try again!</p>
+  
+</div>
