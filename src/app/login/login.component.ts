@@ -30,8 +30,16 @@ export class LoginComponent implements OnInit {
     this.loginService.followUser(this.loginDetails.username, 
                                 this.loginDetails.password).
     subscribe((response) => {
-      this.loginData.validLogin = response.res;
-      this.router.navigateByUrl('/main');
+      console.log(response);
+      if (response.res !== -1) {
+        this.loginData.validLogin = true;
+        this.loginData.secretNumber = response.res;
+        this.router.navigateByUrl('/main');
+      } else {
+        this.loginData.validLogin = false;
+        this.loginData.secretNumber = -1;
+        this.router.navigateByUrl('/main');
+      }
     });
   }
 

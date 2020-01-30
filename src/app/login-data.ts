@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class LoginData {
 
     public validLogin: boolean;
+    public secretNumber: number;
 
     public constructor() { }
 
