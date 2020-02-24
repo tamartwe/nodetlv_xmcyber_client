@@ -21,7 +21,7 @@ export class LoginService {
   constructor(
     private http: HttpClient) {}
 
-  private loginUrl = 'http://localhost:3000/login/';
+  private loginUrl = 'http://localhost:80/login/';
   
   followUser(username: string, password: string): Observable<any> {
     const url = `${this.loginUrl}`;
