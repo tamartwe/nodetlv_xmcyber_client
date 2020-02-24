@@ -31,14 +31,16 @@ export class LoginComponent implements OnInit {
                                 this.loginDetails.password).
     subscribe((response) => {
       console.log(response);
-      if (response.res !== -1) {
-        this.loginData.validLogin = true;
-        this.loginData.secretNumber = response.res;
-        this.router.navigateByUrl('/main');
-      } else {
+      if (response === undefined) {
         this.loginData.validLogin = false;
         this.loginData.secretNumber = -1;
         this.router.navigateByUrl('/main');
+      } else {
+        if (response.res !== -1) {
+          this.loginData.validLogin = true;
+          this.loginData.secretNumber = response.res;
+          this.router.navigateByUrl('/main');
+        }
       }
     });
   }
